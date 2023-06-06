@@ -21,5 +21,19 @@ export const addProduct = async (req, res) => {
 }
 
 
+export const getAllProducts = async (req, res) => {
+    try{
+        const response = await Products.find({}).exec()
+        if(response){
+            return res.send(response);
+        }else{
+            return res.send("Products not found!")
+        }
+
+    }catch(error){
+        return res.send(error);
+    }
+}
+
 
 

@@ -1,7 +1,7 @@
 
 import express from "express";
 import { getUserByEmail} from "../controllers/UserControllers.js";
-import { addProduct } from "../controllers/ProductControllers.js";
+import { addProduct, getAllProducts } from "../controllers/ProductControllers.js";
 
 import { addProducttoCart, loginOtpCheckForEmail, loginOtpCheckForNumber,  otpCkeckForEmail, otpCkeckForNumber, otpLogin, otpRegistration, buyProduct} from "../controllers/OtpControllers.js";
 import { checkEmail } from "../middlewares/authMiddleware.js";
@@ -21,6 +21,6 @@ router.post('/addProducttoCart', addProducttoCart);
 router.post('/buyProduct', buyProduct);
 
 
-// router.get('/get-all-products', getAllProducts);
+router.get('/get-all-products', getAllProducts);
 
 export default router;

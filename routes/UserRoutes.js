@@ -19,7 +19,8 @@ router.post('/loginOtpCheckForEmail', loginOtpCheckForEmail);
 router.post('/loginOtpCheckForNumber', loginOtpCheckForNumber);
 router.post('/addProducttoCart', addProducttoCart);
 router.post('/buyProduct', buyProduct);
-removeProductFromCart
+router.post('/removeProductFromCart', removeProductFromCart);
+
 
 router.get('/get-all-products', getAllProducts);
 

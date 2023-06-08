@@ -204,9 +204,9 @@ export const buyProduct = async (req, res) => {
 
 export const removeProductFromCart = async (req, res) => {
     try {
-        const { email, products } = req.body;
+        const { email, products_id } = req.body;
         if (!email) return res.send("Email is required!")
-        if (!products) return res.send("product_id is required!")
+        if (!products_id) return res.send("product_id is required!")
 
 
         const user = await Users.find({ email }).exec();
@@ -215,7 +215,7 @@ export const removeProductFromCart = async (req, res) => {
 
         const updateUser = await Users.findByIdAndUpdate({ _id: userId },
             {
-                $pull: { products }
+                $pull: { products_id }
             }).exec();
         await updateUser.save();
 
